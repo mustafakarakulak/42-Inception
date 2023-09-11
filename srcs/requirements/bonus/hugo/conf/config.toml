@@ -1,0 +1,30 @@
+baseURL = "https://mkarakul.42.fr/info"
+theme = "shell"
+paginate = 8
+canonifyURLs = true
+
+[params]
+	
+	[Params.Terminal]
+		schema = "gruvbox_dark"
+
+	userName = "mkarakul"
+	pcName = "macos"
+	workDir = "home"
+	
+	description = """
+	Hello motherf*cker...
+	I Am Mustafa Karakulak
+	This is My Sucking Portfolio!
+	
+	"""
+	
+	[Params.Tree]
+	use = true
+	files = [
+	["Python", "https://python.org/"],
+	["Django", "https://mkarakul.42.fr"],
+	["Hugo", "https://gohugo.io/"],
+	["Docker", "https://github.com/mustafakarakulak"],
+	
+	]
