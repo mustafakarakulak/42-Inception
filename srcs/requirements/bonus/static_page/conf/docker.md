@@ -1,6 +1,6 @@
 ---
 title: "Docker ve Docker-Compose Nedir?"
-date: 2023-05-08T10:46:32Z
+date: 2023-09-12T10:46:32Z
 draft: false
 ---
 

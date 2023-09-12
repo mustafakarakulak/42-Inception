@@ -16,8 +16,8 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	wp core download --allow-root;
 	mv /var/www/wp-config.php /var/www/html/
 	echo "Wordpress: creating users..."
-	wp core install --allow-root --url="mkarakul.42.fr" --title="wordpress" --admin_user=${MYSQL_USER} --admin_password=${MYSQL_PASSWORD} --admin_email="mkarakul@mkarakul.com"
-	wp user create --allow-root ${MYSQL_USER} "mkarakul@mkarakul.com" --user_pass=${MYSQL_PASSWORD};
+	wp core install --allow-root --url=${DOMAIN_NAME} --title=${WP_HOST} --admin_user=${WP_USERNAME} --admin_password=${WP_PASSWORD} --admin_email=${WP_MAIL}
+	wp user create --allow-root ${WP_USERNAME} ${WP_MAIL} --user_pass=${WP_PASSWORD};
 
 	wp plugin install redis-cache --activate --allow-root
   wp plugin update --all --allow-root
