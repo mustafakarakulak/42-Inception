@@ -20,16 +20,16 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wordpress' );
+define( 'DB_NAME', ${WP_HOST} );
 
 /** Database username */
-define( 'DB_USER', 'mkarakul');
+define( 'DB_USER', ${WP_USERNAME} );
 
 /** Database password */
-define( 'DB_PASSWORD', '1234');
+define( 'DB_PASSWORD', ${WP_PASSWORD} );
 
 /** Database hostname */
-define( 'DB_HOST', 'mariadb' );
+define( 'DB_HOST', ${MYSQL_HOSTNAME} );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -39,7 +39,7 @@ define( 'DB_COLLATE', '' );
 
 //** Redis cache settings. */
 define('WP_CACHE', true);
-define('WP_CACHE_KEY_SALT', 'mkarakul@mkarakul.com');
+define('WP_CACHE_KEY_SALT', ${WP_MAIL});
 
 //** Try Redis container */
 define('WP_REDIS_HOST', 'redis');
