@@ -13,7 +13,7 @@ if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
     # Dosya üzerindeki kullanıcı yetkisi
     chown -R $FTP_USR:$FTP_USR /var/www/html
 
-    # env'den FTP_USR değerini alıp vsftpd.userlist dosyasına yazar
+    # env'den FTP_USR degerini alıp vsftpd.userlist dosyasına yar
     echo $FTP_USR | tee -a /etc/vsftpd.userlist &> /dev/null
 
 fi

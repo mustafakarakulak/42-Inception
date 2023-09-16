@@ -18,7 +18,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	echo "Wordpress: creating users..."
 	wp core install --allow-root --url=${DOMAIN_NAME} --title=${WP_HOST} --admin_user=${WP_USERNAME} --admin_password=${WP_PASSWORD} --admin_email=${WP_MAIL}
 	wp user create --allow-root ${WP_USERNAME} ${WP_MAIL} --user_pass=${WP_PASSWORD};
-
+	wp user create --allow-root user42 user42@example.com --role=subscriber --user_pass=user123
 	wp plugin install redis-cache --activate --allow-root
   wp plugin update --all --allow-root
   wp plugin activate redis-cache --allow-root

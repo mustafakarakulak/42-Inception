@@ -11,7 +11,7 @@ down:
 re: clean all
 
 clean:
-	@$(DC) down -v --remove-orphans     
+	@$(DC) down -v --remove-orphans
 	@docker rmi -f $$(docker images -q)
 
 .PHONY: all down re clean
