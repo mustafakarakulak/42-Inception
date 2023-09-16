@@ -1,15 +1,17 @@
-FROM debian:10
+FROM	debian:buster
 
-RUN apt-get update
-RUN apt-get -y install php7.3 php-mysqli php-fpm wget sendmail
+RUN	apt-get update && apt-get install -y nginx openssl
 
-EXPOSE 9000
+RUN mkdir /etc/nginx/ssl
 
-COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
-COPY ./tools /var/www/
+COPY ./conf/nginx.conf /etc/nginx/sites-enabled/default
+COPY ./tools/nginx_start.sh /var/www
 
-RUN chmod +x /var/www/wordpress_start.sh
+RUN chmod +x /var/www/nginx_start.sh
+RUN mkdir -p /run/nginx
 
-ENTRYPOINT [ "/var/www/wordpress_start.sh" ]
+ENTRYPOINT ["var/www/nginx_start.sh"]
 
-CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]
+EXPOSE	443
+
+CMD ["nginx", "-g", "daemon off;"]
